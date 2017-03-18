@@ -1,0 +1,29 @@
+.home-div {
+  display: inline-block;
+
+  P {
+    font-family: 'Bree Serif', serif;
+    font-size  : 30px;
+    color : black;
+    font-weight: 700;
+    line-height: 70px;
+    padding-left: 10px;
+    cursor: pointer;
+  }
+  p:hover {
+    color: red;
+  }
+}
+
+.fixed-navigation-bar {
+  position: fixed;
+  border-top: 3px solid #F48024;
+  transition:  box-shadow cubic-bezier(.165, .84, .44, 1) .25s;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 75px;
+  background-color: #fafafb;
+}

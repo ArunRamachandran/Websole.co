@@ -1,0 +1,27 @@
+.processor-wraper {
+  padding-top: 110px;
+  -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+  animation-name: example;
+  animation-duration: 1s;
+}
+
+  .data-processor-main {
+    background-color: white;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    max-width: 800px;
+    height: 450px;
+  	margin: 50px auto;
+  	padding-left: 50;
+  	padding-right: 1em;
+  }
+
+  @-webkit-keyframes example {
+    0%   {padding-right: 0px; padding-left: 750px;}
+}
+
+/* Standard syntax */
+@keyframes example {
+    0%   {padding-right: 0px; padding-left: 750px;}
+}

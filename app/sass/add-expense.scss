@@ -1,0 +1,51 @@
+.add-expense-title {
+  display: inline-block;
+  position: absolute;
+  padding-left: 150;
+}
+
+.websole_expense-history {
+    display: inline-block;
+    position: absolute;
+    padding-left: 570;
+}
+.expense-form-paid-by {
+  position: relative;;
+  padding-top: 15;
+  float: left;
+}
+
+.expense-form-paid-amount {
+    position: absolute;
+    float: right;
+    padding-left: 100;
+    padding-top: 15;
+    width: 100;
+}
+
+.expense-form-datePicker {
+  position: absolute;;
+  margin-top: 120;
+}
+
+.expense-form-selectField {
+    position: relative;
+    float: right;
+    margin-top: 100;
+    margin-right: 190;
+}
+
+.websole_members-list {
+    position: absolute;
+    padding-top: 200;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 500;
+}
+
+.websole_add-expense-buttons-list {
+    float: right;
+    position: relative;
+    padding-top: 150;
+    padding-left: 300;
+}

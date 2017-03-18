@@ -1,0 +1,35 @@
+.layout-outer-wraper {
+  padding-left: 30;
+}
+
+.left-panel {
+  float: left;
+  padding-left: 10;
+}
+
+.right-panel {
+    float: right;
+}
+
+.right-submenu-text {
+    float: left;
+    padding-top: 27;
+    padding-right: 30;
+}
+
+.right-submenu-btn {
+    float: right;
+    padding-top: 9;
+}
+
+material-icons:hover{
+  color: red!important;
+}
+
+.add-member-save-btn {
+  float: right;
+  position: absolute;
+  padding-left: 500;
+  margin-top: 250;
+  transition: transform .2s ease-in-out;
+}
