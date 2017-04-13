@@ -85,6 +85,15 @@ export default class AddExpense extends Component {
     }
   }
 
+  componentDidMount () {
+    console.log("Did Mount : Add Expense : ");
+    if (this.props.groupExpenseList.length) {
+      this.setState({
+       fullExpenseList: this.props.groupExpenseList
+      })
+    }
+  }
+
   componentWillReceiveProps (nextProps, nextState) {
     console.log("Receiving Props : ", nextProps, nextState);
   }
@@ -283,6 +292,23 @@ export default class AddExpense extends Component {
     });
   }
 
+  calculateGroupExpense = () => {
+    console.log("paidBy : ", this.state.paidBy);
+    if (this.state.paidBy && this.state.amountPaid) {
+      /** Condition to prevent a minor bug from UI -
+        * Currently each expense will add into the expenseList only when user clicks on the 'ADD' button
+        * If user directly click on the CALCULATE EXPENSE button while adding the last expense in group,
+        * the last expense will not be added into the list
+        * So, whenever user clicks on CALCULATE EXPENSE button, if any data resides on the form (Especially the last expense)
+        *   will be added into the account in this condition
+        */
+      this.updateCurrentExpenseList();
+      this.props.saveAndCalculateExpense(this.state.fullExpenseList);
+    } else {
+      this.props.saveAndCalculateExpense(this.state.fullExpenseList);
+    }
+  }
+
   renderExpenseForm = () => {
     const actions = [
       <RaisedButton
@@ -340,7 +366,7 @@ export default class AddExpense extends Component {
             style={buttonStyle} />
           <RaisedButton
             label="Calculate Expense"
-            onClick={() => {this.props.saveAndCalculateExpense(this.state.fullExpenseList)}}
+            onClick={this.calculateGroupExpense}
             disabled={!this.state.fullExpenseList.length}
             primary={true}
             style={buttonStyle} />

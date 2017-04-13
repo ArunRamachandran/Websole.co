@@ -45,10 +45,11 @@ export default class ViewExpenseHistory extends Component {
     let list = expenseList.map( (data, index) => {
       return (
         <div key={index} className="websole_expense-history-list">
+          <span style={expenseListStyle.span}>{index + 1}. </span>
           <span style={expenseListStyle.span}>paid by: {data.paidBy}</span>
           <span style={expenseListStyle.span}>amount : {data.amountPaid}</span>
           <span style={expenseListStyle.span}>{data.splitBy !== "All" ? `splitAmong: ${data.splitAmong}`: 'splitAmong: All'}</span>
-          <span>
+          <span style={expenseListStyle.span}>
             <IconButton
               style={{cursor: 'pointer'}}
               tooltip="Delete expense"

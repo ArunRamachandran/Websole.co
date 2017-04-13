@@ -29,16 +29,24 @@ export default class AddMembers extends Component {
     this.state = {
       addNewMember: false,
       currentMemberName: '',
-      groupMembers: ["Arun", "Joby", "Sajith", "Vaisakh", "Athul", "Shabin"],
+      groupMembers: ["Arun", "Sajith", "Vaisakh", "Shabin", "Athul", "Joby"],
       isLimitExceeded: false,
       isInvalidUserInput: false,
       errorMessage: ''
     }
   }
 
+  componentDidMount () {
+    if (this.props.groupMembers.length) {
+      this.setState({
+        groupMembers: this.props.groupMembers
+      })
+    }
+  }
+
   initiateAction = (event) => {
     event.preventDefault;
-    if (this.state.groupMembers.length <= 7) {
+    if (this.state.groupMembers.length <= 11) {
       this.setState({
         addNewMember: true
       })
@@ -168,10 +176,11 @@ export default class AddMembers extends Component {
 
         <div className="left-panel">
           <p>{this.props.groupName}</p>
-          {this.state.groupMembers.length &&
+          {this.state.groupMembers.length ?
             <Paper zDepth={2}>
               {this.renderGroupMembers()}
             </Paper>
+            : <div></div>
           }
         </div>
 
@@ -180,7 +189,7 @@ export default class AddMembers extends Component {
         </div>
 
         { /* Render save button only when user enter atleast one valid input */
-          this.state.groupMembers.length &&
+          this.state.groupMembers.length ?
             <div className="add-member-save-btn">
               <RaisedButton
                 label="SAVE & CONTINUE"
@@ -188,7 +197,7 @@ export default class AddMembers extends Component {
                 disabled={!this.state.groupMembers.length}
                 primary={true}
                 style={buttonStyle} />
-            </div>
+            </div> : null
         }
 
         {this.state.isLimitExceeded &&
