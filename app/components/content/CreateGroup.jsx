@@ -10,8 +10,8 @@ export default class CreateGroup extends Component {
   constructor (props) {
     super (props);
     this.state = {
-      //groupName: this.props.groupName ? this.props.groupName : ''
-      groupName: 'Flat Inmates' // Comment this line & add above line as the correct one
+      groupName: this.props.groupName ? this.props.groupName : ''
+      //groupName: 'Flat Inmates' // Comment this line & add above line as the correct one
     }
   }
 

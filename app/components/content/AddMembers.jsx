@@ -29,7 +29,8 @@ export default class AddMembers extends Component {
     this.state = {
       addNewMember: false,
       currentMemberName: '',
-      groupMembers: ["Arun", "Sajith", "Vaisakh", "Shabin", "Athul", "Joby"],
+      //groupMembers: ["Arun", "Sajith", "Vaisakh", "Shabin", "Athul", "Joby"],
+      groupMembers: [],
       isLimitExceeded: false,
       isInvalidUserInput: false,
       errorMessage: ''

@@ -70,8 +70,8 @@ export default class AddExpense extends Component {
     super (props);
     this.state = {
       isSnackbarVisible: false,
-      //fullExpenseList: [],
-      fullExpenseList: setDefault,
+      fullExpenseList: [],
+      //fullExpenseList: setDefault,
       paidBy: '',
       amountPaid: '',
       paidDate: new Date(),
