@@ -1,5 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import render from 'react-dom';
+//import SaveExpense from './saveExpense/SaveExpense.jsx';
+import SplitBill from './SplitBill.jsx';
 
 import RaisedButton from 'material-ui/RaisedButton';
 import IconButton from 'material-ui/IconButton';
@@ -19,14 +21,20 @@ export default class WebsoleLanding extends Component {
     return (
       <div>
         <p className="landing-main-section">Personalized Expense Manager ...</p>
-        <span className="getting-started-btn">
+        {/*<span className="getting-started-btn">
           <RaisedButton
             onClick={this.props.onClickHandler}
             label="Get started"
             labelPosition="before"
             primary={true}
             style={style} />
-        </span>
+        </span>*/}
+        <div>
+          {/*<SaveExpense/>*/}
+          <SplitBill 
+            splitManually={this.props.onClickHandler}
+            enableScanSplit={this.props.enableScanSplit}/>
+        </div>
       </div>
     );
   }

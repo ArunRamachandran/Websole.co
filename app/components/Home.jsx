@@ -14,19 +14,32 @@ export default class Home extends Component {
   constructor (props) {
     super (props);
     this.state = {
-      isLandingPage: true
+      isLandingPage: true,
+      isScanNsplit: false,
+      isNormalSplit: false
     }
   }
 
   showLandingPage = (e) => {
     this.setState({
-      isLandingPage: true
+      isLandingPage: true,
+      isScanNsplit: false,
+      isNormalSplit: false
+
     })
   }
 
   getStarted = (e) => {
     this.setState({
-      isLandingPage: false
+      isLandingPage: false,
+      isNormalSplit: true
+    })
+  }
+
+  enableScanSplit = (e) => {
+    this.setState({
+      isLandingPage: false,
+      isScanNsplit: true
     })
   }
 
@@ -41,9 +54,16 @@ export default class Home extends Component {
         </nav>
         <div>
           {this.state.isLandingPage &&
-            <WebsoleLanding onClickHandler={this.getStarted}/>
+            <WebsoleLanding 
+              onClickHandler={this.getStarted}
+              enableScanSplit={this.enableScanSplit}/>
           }
-          {!this.state.isLandingPage && <DataProcessor/>}
+          {
+            !this.state.isLandingPage && 
+              <DataProcessor
+                isNormalSplit={this.state.isNormalSplit}
+                isScanNsplit={this.state.isScanNsplit}/>
+          }
         </div>
       </div>
     );

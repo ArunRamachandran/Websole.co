@@ -2,6 +2,8 @@ import React, {Component, PropTypes} from 'react';
 import render from 'react-dom';
 import PersonalizedContent from './content/PersonalizedContent.jsx';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import ScanNsplit from './ScanNsplit.jsx';
+
 import '../sass/data-processor.scss';
 
 export default class DataProcessor extends Component {
@@ -14,7 +16,7 @@ export default class DataProcessor extends Component {
     return (
       <div className="processor-wraper">
         <Card className="data-processor-main">
-          <PersonalizedContent/>
+          {this.props.isNormalSplit ? <PersonalizedContent/> : <ScanNsplit/>}
         </Card>
       </div>
     );
