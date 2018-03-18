@@ -63,6 +63,7 @@ export default class PersonalizedContent extends Component {
         console.log("Here we gooo...");
         return <AddMembers
           saveGroupmembers={this.saveGroupmembers}
+          groupMembers={this.state.groupMembers}
           groupName={this.state.groupName}/>
         break;
 
